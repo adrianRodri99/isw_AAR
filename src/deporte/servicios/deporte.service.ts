@@ -26,7 +26,7 @@ export class DeporteService {
     ){}
 
     async getDeportes(){
-        const res= await this.deporteRepo.find({relations:['capitan','deportistas']})
+        const res= await this.deporteRepo.find({relations:['capitan','deportistas',]})
         
         if(res.length == 0) throw new NotFoundException('na hay deportes')
 

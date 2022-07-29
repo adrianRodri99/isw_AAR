@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
 
+import { Exclude } from "class-transformer";
 import { Deportista } from "src/deportista/entidad/deportista.entity";
 import { Usuario } from "src/user/entidad/Usuario.entity";
 import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany, PrimaryGeneratedColumn,  } from "typeorm";
@@ -23,12 +24,12 @@ export class Deporte{
     sexo: string
 
 
-    @ManyToOne(()=> Deportista,{nullable: true, onDelete: 'SET NULL'})
+    @ManyToOne(()=> Deportista,{eager: true, nullable: true, onDelete: 'SET NULL', })
     @JoinColumn({name: 'capitan'})
     capitan: Deportista
 
     @ManyToMany(()=>Deportista, deportistas=> deportistas.deporte,
-        {nullable: true, onDelete: 'SET NULL', onUpdate: 'CASCADE',})
+        {nullable: true, onDelete: 'SET NULL', onUpdate: 'CASCADE', })
     @JoinTable()
     deportistas: Deportista[]
 

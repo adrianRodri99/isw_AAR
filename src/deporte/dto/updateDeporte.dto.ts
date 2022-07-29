@@ -5,3 +5,4 @@ import { CreateDeporteDTO } from "./createDeporte.dto";
 
 
 export class UpdateDeporteDTO extends PartialType(CreateDeporteDTO){}
+

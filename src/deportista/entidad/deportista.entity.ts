@@ -14,13 +14,13 @@ export class Deportista{
     @Column()
     grupo: string;
 
-    @OneToOne(()=>Usuario, {onDelete: 'CASCADE'})
+    @OneToOne(()=>Usuario, {eager: true, onDelete: 'CASCADE'})
     @JoinColumn()
     usuario: Usuario
 
     @OneToMany(()=>Deporte,deporte=>deporte.capitan)
 
-    @ManyToMany(()=>Deporte, deporte=>deporte.deportistas, {onDelete:'CASCADE'})
+    @ManyToMany(()=>Deporte, deporte=>deporte.deportistas, {onDelete:'CASCADE', })
     deporte: Deporte[]
 
 

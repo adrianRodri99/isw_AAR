@@ -30,6 +30,12 @@ rol
     .createAny([AppRecursos.USER,AppRecursos.DEPORTE])
     .updateAny([AppRecursos.USER,AppRecursos.DEPORTISTA,AppRecursos.DEPORTE])
     .deleteAny([AppRecursos.USER,AppRecursos.DEPORTISTA,AppRecursos.DEPORTE])
-
-
+    
+    //creo q este rol no debe estar
+    // //capitan roles
+    // .grant(AppRoles.CAPITAN)
+    // .extend(AppRoles.USUARIO)
+    // .updateAny([AppRecursos.DEPORTISTA])
+    // .deleteAny([AppRecursos.DEPORTISTA])
+    
 
